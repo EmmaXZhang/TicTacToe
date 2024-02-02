@@ -15,12 +15,13 @@ const state = {
   currentClass: "x",
   circleClass: "circle",
   xClass: "x",
-  //   circleTurn: "",
 };
 
 //cached elements
 const elements = {
   cells: document.querySelectorAll(".cell"),
+  winMsg: document.querySelector(".messageText"),
+  message: document.querySelector(".message"),
 };
 
 //event listener
@@ -33,10 +34,15 @@ function handleClick(event) {
   //define clicked cell
   const cell = event.target;
 
-  //add X or O class to show mark
+  //add X or O class to place mark
   placeMark(cell, state.currentClass);
 
   //check wins
+  if (checkWins(state.currentClass) === true) {
+    elements.winMsg.innerText = `${state.currentClass} Wins`;
+    elements.message.classList.add("msgShow");
+  }
+
   //check draw
 
   //switch player
@@ -55,4 +61,13 @@ function switchPlayer(currentClass) {
   } else {
     state.currentClass = "x";
   }
+}
+
+//check winner -> return boolean value
+function checkWins(currentClass) {
+  return winningCombination.some(function checkClass(winCase) {
+    return winCase.every((cellIndex) =>
+      elements.cells[cellIndex - 1].classList.contains(currentClass)
+    );
+  });
 }
