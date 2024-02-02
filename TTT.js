@@ -12,10 +12,10 @@ const winningCombination = [
 
 // state varibles
 const state = {
-  currentClass: "",
+  currentClass: "x",
   circleClass: "circle",
   xClass: "x",
-  circleTurn: "",
+  //   circleTurn: "",
 };
 
 //cached elements
@@ -32,15 +32,15 @@ elements.cells.forEach(function (cell) {
 function handleClick(event) {
   //define clicked cell
   const cell = event.target;
+
   //add X or O class to show mark
-  state.currentClass = state.circleTurn ? state.circleClass : state.xClass; // initial show "X" class
   placeMark(cell, state.currentClass);
 
   //check wins
   //check draw
 
   //switch player
-  switchPlayer(cell, state.currentClass);
+  switchPlayer(state.currentClass);
 }
 
 //choose placeMark
@@ -49,3 +49,10 @@ function placeMark(cell, currentClass) {
 }
 
 //switch player
+function switchPlayer(currentClass) {
+  if (currentClass === "x") {
+    state.currentClass = "circle";
+  } else {
+    state.currentClass = "x";
+  }
+}
