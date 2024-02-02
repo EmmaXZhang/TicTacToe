@@ -27,6 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  cursor: pointer;
 }
 
 /* targe the 1st, 2nd,3rd child element with the class "cell" of parent element */
@@ -55,8 +56,8 @@ body {
 /* X -mark class */
 .cell.x::before,
 .cell.x::after {
-  position: absolute;
   content: "";
+  position: absolute;
   width: 50%;
   height: 5px; /* cross thickness */
   background-color: black;
@@ -80,8 +81,8 @@ body {
 
 .cell.circle::before,
 .cell.circle::after {
-  position: absolute;
   content: "";
+  position: absolute;
   border-radius: 50%;
 }
 
@@ -95,4 +96,19 @@ body {
   height: 40px;
   width: 40px;
   background-color: white;
+}
+
+/* winning message */
+.message.msgShow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  font-size: 90px;
 }
