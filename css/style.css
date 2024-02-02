@@ -1,0 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
+#cell {
+  border: 5px black;
+}
