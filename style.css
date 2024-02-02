@@ -21,6 +21,78 @@ body {
 .cell {
   width: 100px;
   height: 100px;
-  border: 13px black;
-  /* background-color: black; */
+  border: 1px solid black;
+  /* to show X and O mark */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* targe the 1st, 2nd,3rd child element with the class "cell" of parent element */
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.cell:nth-child(3n + 3) {
+  border-right: none;
+}
+
+.cell:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+.winMessage {
+  background-color: black;
+}
+
+/* X -mark class */
+.cell.x::before,
+.cell.x::after {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 5px; /* cross thickness */
+  background-color: black;
+}
+
+.cell.x::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after {
+  transform: rotate(-45deg);
+}
+
+/* O -mark class */
+/* .cell.circle {
+  height: 50px;
+  width: 50px;
+  border: 5px solid black;
+  border-radius: 50%;
+} */
+
+.cell.circle::before,
+.cell.circle::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+}
+
+.cell.circle::before {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+}
+
+.cell.circle::after {
+  height: 40px;
+  width: 40px;
+  background-color: white;
 }
