@@ -22,6 +22,7 @@ const elements = {
   cells: document.querySelectorAll(".cell"),
   winMsg: document.querySelector(".messageText"),
   message: document.querySelector(".message"),
+  restartBtn: document.querySelector(".restart"),
 };
 
 //event listener
@@ -29,11 +30,12 @@ elements.cells.forEach(function (cell) {
   cell.addEventListener("click", handleClick, { once: true }); //only can click one time
 });
 
+elements.restartBtn.addEventListener("click", restart);
+
 //function
 function handleClick(event) {
   //define clicked cell
   const cell = event.target;
-
   //add X or O class to place mark
   placeMark(cell, state.currentClass);
 
@@ -82,4 +84,16 @@ function checkDraw() {
   return Array.from(elements.cells).every(
     (cell) => cell.classList.contains("x") || cell.classList.contains("circle")
   );
+}
+
+//restart function
+function restart() {
+  elements.message.classList.remove("msgShow");
+  state.currentClass = "x";
+
+  elements.cells.forEach(function (cell) {
+    cell.classList.remove("x");
+    cell.classList.remove("circle");
+    cell.addEventListener("click", handleClick, { once: true }); //only can click one time
+  });
 }
