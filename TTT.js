@@ -1,13 +1,13 @@
 // const
 const winningCombination = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
   [1, 4, 7],
   [2, 5, 8],
-  [3, 6, 9],
-  [1, 5, 9],
-  [3, 5, 7],
+  [0, 4, 8],
+  [2, 4, 6],
 ];
 
 // state varibles
@@ -44,7 +44,7 @@ function handleClick(event) {
   }
 
   //check draw
-  if (checkDraw() === true) {
+  else if (checkDraw() === true) {
     elements.winMsg.innerText = "Draw!";
     elements.message.classList.add("msgShow");
   }
@@ -72,7 +72,7 @@ function switchPlayer(currentClass) {
 function checkWins(currentClass) {
   return winningCombination.some(function checkClass(winCase) {
     return winCase.every((cellIndex) =>
-      elements.cells[cellIndex - 1].classList.contains(currentClass)
+      elements.cells[cellIndex].classList.contains(currentClass)
     );
   });
 }

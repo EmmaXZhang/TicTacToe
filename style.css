@@ -73,13 +73,8 @@ body {
 }
 
 /* O -mark class */
-/* .cell.circle {
-  height: 50px;
-  width: 50px;
-  border: 5px solid black;
-  border-radius: 50%;
-} */
 
+/* They are positioned on top of each other due to the use of position: absolute */
 .cell.circle::before,
 .cell.circle::after {
   content: "";
@@ -106,12 +101,14 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(103, 93, 80, 0.9);
+  background-color: rgb(103, 93, 80, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   color: aliceblue;
   font-size: 90px;
+  flex-direction: column;
+  font-family: "Protest Riot", sans-serif;
 }
 
 header {
@@ -121,4 +118,16 @@ header {
   display: flex;
   justify-content: center;
   margin: 100px;
+}
+
+.restart {
+  font-size: 40px;
+  margin-top: 20px;
+  border-radius: 12px;
+  font-family: "Protest Riot", sans-serif;
+}
+
+.restart:hover {
+  background-color: rgb(103, 93, 80);
+  color: white;
 }
