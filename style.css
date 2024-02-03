@@ -9,7 +9,7 @@ body {
 
 .board {
   width: 100vw;
-  height: 60vh;
+  height: 55vh;
   display: grid;
   justify-content: center;
   justify-items: center;
@@ -101,7 +101,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(103, 93, 80, 0.8);
+  background-color: rgb(171, 196, 170, 0.8);
   display: none;
   justify-content: center;
   align-items: center;
@@ -130,6 +130,7 @@ header {
   margin-top: 20px;
   border-radius: 12px;
   font-family: "Protest Riot", sans-serif;
+  color: rgb(169, 144, 126);
 }
 
 .restart:hover {

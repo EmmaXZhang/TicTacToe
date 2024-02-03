@@ -23,6 +23,7 @@ const elements = {
   winMsg: document.querySelector(".messageText"),
   message: document.querySelector(".message"),
   restartBtn: document.querySelector(".restart"),
+  nextTurn: document.querySelector(".nextTurn"),
 };
 
 //event listener
@@ -53,6 +54,7 @@ function handleClick(event) {
 
   //switch player
   switchPlayer(state.currentClass);
+  elements.nextTurn.innerText = `Next turn: ${state.currentClass}`;
 }
 
 //functions
@@ -90,11 +92,12 @@ function checkDraw() {
 function restart() {
   elements.message.classList.remove("msgShow");
   state.currentClass = "x";
-
+  elements.winMsg.innerText = "";
+  elements.nextTurn.innerText = "Next turn: x";
   elements.cells.forEach(function (cell) {
     cell.classList.remove("x");
     cell.classList.remove("circle");
-    elements.winMsg.innerText = "";
+
     cell.addEventListener("click", handleClick, { once: true }); //only can click one time
   });
 }
