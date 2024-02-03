@@ -9,11 +9,11 @@ body {
 
 .board {
   width: 100vw;
-  height: 100vh;
+  height: 60vh;
   display: grid;
   justify-content: center;
-  /* justify-items: center; */
-  /* align-items: center; */
+  justify-items: center;
+  align-items: center;
   align-content: flex-start;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
@@ -94,21 +94,26 @@ body {
   background-color: rgb(169, 144, 126);
 }
 
-/* winning message */
-.message.msgShow {
+/* winning message showing case, hidden firs */
+.message {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgb(103, 93, 80, 0.8);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   color: aliceblue;
   font-size: 90px;
   flex-direction: column;
   font-family: "Protest Riot", sans-serif;
+}
+
+/* change display to "show" to show message */
+.message.msgShow {
+  display: flex;
 }
 
 header {
@@ -130,4 +135,14 @@ header {
 .restart:hover {
   background-color: rgb(103, 93, 80);
   color: white;
+}
+
+.nextTurn {
+  font-family: "Protest Riot", sans-serif;
+  font-size: 40px;
+  color: black;
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 2000px;
 }

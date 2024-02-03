@@ -94,6 +94,7 @@ function restart() {
   elements.cells.forEach(function (cell) {
     cell.classList.remove("x");
     cell.classList.remove("circle");
+    elements.winMsg.innerText = "";
     cell.addEventListener("click", handleClick, { once: true }); //only can click one time
   });
 }
