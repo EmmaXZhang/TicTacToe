@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  background-color: rgb(169, 144, 126);
 }
 
 .board {
@@ -11,9 +12,9 @@ body {
   height: 100vh;
   display: grid;
   justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
+  /* justify-items: center; */
+  /* align-items: center; */
+  align-content: flex-start;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
 }
@@ -21,7 +22,7 @@ body {
 .cell {
   width: 100px;
   height: 100px;
-  border: 1px solid black;
+  border: 2px solid black;
   /* to show X and O mark */
   display: flex;
   justify-content: center;
@@ -58,9 +59,9 @@ body {
 .cell.x::after {
   content: "";
   position: absolute;
-  width: 50%;
-  height: 5px; /* cross thickness */
-  background-color: black;
+  width: 70%;
+  height: 7px; /* cross thickness */
+  background-color: rgb(243, 222, 186);
 }
 
 .cell.x::before {
@@ -87,15 +88,15 @@ body {
 }
 
 .cell.circle::before {
-  height: 50px;
-  width: 50px;
-  background-color: black;
+  height: 65px;
+  width: 65px;
+  background-color: rgb(171, 196, 170);
 }
 
 .cell.circle::after {
-  height: 40px;
-  width: 40px;
-  background-color: white;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(169, 144, 126);
 }
 
 /* winning message */
@@ -105,10 +106,19 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgb(103, 93, 80, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   color: aliceblue;
   font-size: 90px;
+}
+
+header {
+  font-family: "Protest Riot", sans-serif;
+  font-size: 60px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  margin: 100px;
 }

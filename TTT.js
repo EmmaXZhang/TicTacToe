@@ -44,11 +44,16 @@ function handleClick(event) {
   }
 
   //check draw
+  if (checkDraw() === true) {
+    elements.winMsg.innerText = "Draw!";
+    elements.message.classList.add("msgShow");
+  }
 
   //switch player
   switchPlayer(state.currentClass);
 }
 
+//functions
 //choose placeMark
 function placeMark(cell, currentClass) {
   cell.classList.add(currentClass);
@@ -70,4 +75,11 @@ function checkWins(currentClass) {
       elements.cells[cellIndex - 1].classList.contains(currentClass)
     );
   });
+}
+
+//check draw -> return boolean
+function checkDraw() {
+  return Array.from(elements.cells).every(
+    (cell) => cell.classList.contains("x") || cell.classList.contains("circle")
+  );
 }
