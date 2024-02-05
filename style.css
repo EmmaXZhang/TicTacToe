@@ -115,14 +115,8 @@ body {
 .message.msgShow {
   display: flex;
 }
-/* 
-@property --color {
-  syntax: "<color>";
-  initial-value: black;
-  inherits: true;
-}
 
-@property --color-hue {
+/* @property --color-hue {
   syntax: "<number>";
   initial-value: 0;
   inherits: true;
@@ -152,6 +146,9 @@ header {
   border-radius: 12px;
   font-family: "Protest Riot", sans-serif;
   color: rgb(169, 144, 126);
+  /* --_color: var(--color, rgb(169, 144, 126)); */
+  /* --color: hsl(var(--color-hue) 60% 50%);
+  animation: 5s color-hue linear infinite; */
 }
 
 .restart:hover {
