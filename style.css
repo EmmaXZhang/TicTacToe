@@ -116,21 +116,6 @@ body {
   display: flex;
 }
 
-/* @property --color-hue {
-  syntax: "<number>";
-  initial-value: 0;
-  inherits: true;
-}
-
-@keyframes color-hue {
-  from {
-    --color-hue: 0;
-  }
-  to {
-    --color-hue: 180;
-  }
-} */
-
 header {
   font-family: "Protest Riot", sans-serif;
   font-size: 60px;
